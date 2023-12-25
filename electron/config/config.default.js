@@ -23,11 +23,11 @@ module.exports = (appInfo) => {
    * 主窗口
    */
   config.windowsOption = {
-    title: 'dateTrans',
-    width: 980,
-    height: 650,
-    minWidth: 400,
-    minHeight: 300,
+    title: 'BMH机场信息系统',
+    width: 1200,
+    height: 850,
+    minWidth: 1200,
+    minHeight: 800,
     webPreferences: {
       webSecurity: false,
       contextIsolation: false, // false -> 可在渲染进程中使用electron的api，true->需要bridge.js(contextBridge)

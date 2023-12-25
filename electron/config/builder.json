@@ -1,7 +1,7 @@
 {
-  "productName": "ee",
+  "productName": "BMH机场信息系统",
   "appId": "com.electron.ee",
-  "copyright": "© 2023 哆啦好梦 Technology Co., Ltd.",
+  "copyright": "©cute",
   "directories": {
     "output": "out"
   },
@@ -26,7 +26,7 @@
     "installerHeaderIcon": "build/icons/icon.ico",
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "dateTrans"
+    "shortcutName": "BMH机场信息系统"
   },
   "mac": {
     "icon": "build/icons/icon.icns",

@@ -58,17 +58,17 @@
       width="800px"
       :visible.sync="dialogVisible"
     >
-      <!-- <formEdit @handleClose="handleClose" /> -->
+      <formEdit @handleClose="handleClose" />
     </el-dialog>
   </div>
 </template>
 
 <script>
-// import formEdit from "./formEdit.vue";
+import formEdit from "./formEdit.vue";
 import { getAllFields } from "@/api/dictionaryManage";
 export default {
   components: {
-    // formEdit,
+    formEdit,
   },
   data() {
     return {

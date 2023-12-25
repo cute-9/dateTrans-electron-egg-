@@ -12,57 +12,64 @@
       <i class="el-icon-circle-plus-outline"></i>
       上传文件</el-button
     >
+    <div class="table">
+      <el-table :data="tableData" height="100%" border>
+        >
+        <el-table-column
+          type="index"
+          width="50"
+          label="序号"
+          :index="indexMethod"
+        >
+        </el-table-column>
+        <el-table-column prop="docName" label="文件名" width="200">
+        </el-table-column
+        ><el-table-column prop="downLoadPath" label="路径"> </el-table-column>
+        <el-table-column
+          prop="name"
+          label="路径类型"
+          width="100"
+          align="center"
+        >
+          <template slot-scope="scope">
+            <p>{{ scope.row.isFile ? "文件" : "文件夹" }}</p>
+          </template>
+        </el-table-column>
 
-    <el-table :data="tableData" height="700" border class="table">
-      >
-      <el-table-column
-        type="index"
-        width="50"
-        label="序号"
-        :index="indexMethod"
-      >
-      </el-table-column>
-      <el-table-column prop="docName" label="文件名" width="200">
-      </el-table-column
-      ><el-table-column prop="downLoadPath" label="路径"> </el-table-column>
-      <el-table-column prop="name" label="路径类型" width="100" align="center">
-        <template slot-scope="scope">
-          <p>{{ scope.row.isFile ? "文件" : "文件夹" }}</p>
-        </template>
-      </el-table-column>
+        <el-table-column prop="" label="操作" width="220" align="center">
+          <template slot-scope="scope">
+            <el-button
+              v-if="scope.row.isFile"
+              type="success"
+              size="mini"
+              @click="btnClick(scope.row, 'view')"
+              >查看</el-button
+            >
+            <el-button
+              v-if="!scope.row.isFile"
+              type="warning"
+              size="mini"
+              @click="btnClick(scope.row, 'show')"
+              >展开</el-button
+            >
+            <el-button
+              :disabled="!scope.row.isFile"
+              type="primary"
+              size="mini"
+              @click="btnClick(scope.row, 'down')"
+              >下载</el-button
+            >
+            <el-button
+              type="danger"
+              size="mini"
+              @click="btnClick(scope.row, 'delete')"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
 
-      <el-table-column prop="" label="操作" width="220" align="center">
-        <template slot-scope="scope">
-          <el-button
-            v-if="scope.row.isFile"
-            type="success"
-            size="mini"
-            @click="btnClick(scope.row, 'view')"
-            >查看</el-button
-          >
-          <el-button
-            v-if="!scope.row.isFile"
-            type="warning"
-            size="mini"
-            @click="btnClick(scope.row, 'show')"
-            >展开</el-button
-          >
-          <el-button
-            :disabled="!scope.row.isFile"
-            type="primary"
-            size="mini"
-            @click="btnClick(scope.row, 'down')"
-            >下载</el-button
-          >
-          <el-button
-            type="danger"
-            size="mini"
-            @click="btnClick(scope.row, 'delete')"
-            >删除</el-button
-          >
-        </template>
-      </el-table-column>
-    </el-table>
     <el-pagination
       style="margin-top: 10px; text-align: center"
       @size-change="handleSizeChange"
@@ -239,7 +246,7 @@ export default {
   height: 100%;
   .table {
     width: 100%;
-    // height: calc(100% - 100px);
+    height: calc(100% - 100px);
     margin-top: 10px;
   }
 }
