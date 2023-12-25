@@ -56,6 +56,14 @@ const routes = [
           activeMenu: "/feature",
         },
       },
+      {
+        path: "/dictionaryTable",
+        name: "dictionaryTable",
+        component: () => import("@/views/dictionary-table-manage/indexView"),
+        meta: {
+          activeMenu: "/dictionaryTable",
+        },
+      },
     ],
   },
 ];

@@ -133,6 +133,10 @@ export default {
                   metaRoute: "dataParsing",
                   title: "数据解析",
                 },
+                {
+                  metaRoute: "dictionaryTable",
+                  title: "字典表管理",
+                },
               ],
             },
           ];
