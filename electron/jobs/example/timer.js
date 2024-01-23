@@ -20,7 +20,7 @@ class TimerJob extends Job {
     Log.info("[child-process] TimerJob params: ", this.params);
 
     if (Ps.isChildJob()) {
-      Ps.exit();
+      Ps.quit();
     }
   }   
 }
